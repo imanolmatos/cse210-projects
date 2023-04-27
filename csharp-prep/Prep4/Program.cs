@@ -20,8 +20,6 @@ class Program
         {
           break;
         }
-
-       
         }   
         float count = numbers.Count;
         float minus = count - 1; 
