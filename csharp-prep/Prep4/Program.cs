@@ -15,7 +15,7 @@ class Program
          givenNumber = float.Parse(given);
          numbers.Add(givenNumber);  
         
-        
+          
         if (givenNumber == 0)
         {
           break;
