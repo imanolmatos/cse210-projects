@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+    
 
     public class PromptGenerator{
         public static void Main(String[] args)
@@ -14,16 +15,10 @@ using System.Collections.Generic;
             var rnd = new Random();
             int index = rnd.Next(thePrompts.Count);
 
-            string info = thePrompts[index];
+            Console.WriteLine(thePrompts[index]);
 
-            Console.WriteLine(info);
         }
-
-    // Comment: It is the same situation with   public static void Main(String[] args) without that code I get error in my list.
-      
- }
-
-
+    }
 
 
 
