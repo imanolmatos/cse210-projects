@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 
 
-// Comment 1: If I don't use partial I get an error.
+// Comment : If I don't use partial I get an error.
+
+
   partial class Program 
 {
     static void Main(string[] args)

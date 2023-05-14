@@ -39,7 +39,7 @@ public string _response;
       
  }
 
-// Commentary: I want to use my classes and information as public, but it seems to be that in order to work with lists I should use this code:    public static void Main(String[] args). By using this I don't know how I can call my variables
+// Commentary: I want to use my classes and information as public, but it seems to be that in order to work with lists I should use this code:    public static void Main(String[] args). By using this I don't know how I can call my variables in other class
 
 
 

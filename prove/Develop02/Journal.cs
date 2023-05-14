@@ -7,7 +7,7 @@ public partial class Journal {
   List<Entry> _entries = new List<Entry>();
 
 
-// I will call the object in entry(The string with all the information but I need that string). I will add that object to the list _entries. 
+// Comment: I will call the object in entry(The string with all the information but I need that string). I will add that object to the list _entries. 
    public void WelcomeMessage()
     {
     Console.WriteLine("Welcome to your journal. \r\n Please choose an option: \r\n 1. Write. \r\n 2. Display \r\n 3. Load. \r\n 4. Save. \r\n 5. Quit.");
