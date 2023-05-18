@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 
 
-// Comment : If I don't use partial I get an error.
+// Comment 1: If I don't use partial I get an error.
 
-
+This program is not complete. I choose to send this. In order to maybe receive feedback. I will do my best to try to be near the 100 points.  I learned Python on the last  months, this class is going very fast but I will do my best to try to a better job and resubmit.
   partial class Program 
 {
     static void Main(string[] args)
