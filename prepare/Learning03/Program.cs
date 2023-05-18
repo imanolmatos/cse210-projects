@@ -12,19 +12,11 @@ class Program
 
          Fraction f = new Fraction();
 
-         // 6/7
-         f.SetTop(6);
-        //  Console.WriteLine(f.GetTop());
-         f.SetBottom(7);
-        //  Console.WriteLine(f.GetBottom());
-        Console.WriteLine(f.GetFractionString());
-         Console.WriteLine(f.GetDecimalValue());
-
 
          // 1/1
          f.SetTop(1);
         //  Console.WriteLine(f.GetTop());
-         f.SetBottom(1);
+        //  f.SetBottom(1);
         //  Console.WriteLine(f.GetBottom());
          Console.WriteLine(f.GetFractionString());
           Console.WriteLine(f.GetDecimalValue());
@@ -33,7 +25,7 @@ class Program
          // 5/1
          f.SetTop(5);
         //  Console.WriteLine(f.GetTop());
-         f.SetBottom(1);
+        //  f.SetBottom(1);
         //  Console.WriteLine(f.GetBottom());
          Console.WriteLine(f.GetFractionString());
          Console.WriteLine(f.GetDecimalValue());
