@@ -30,17 +30,16 @@ public class Journal
     { 
         entries.Clear();
         Console.WriteLine("What is the name of your file? ");
-        Console.Write("> " );
         string fileName = Console.ReadLine();
         string[] lines = File.ReadAllLines(fileName);
 
         foreach (string line in lines)
         {
             string[] parts = line.Split("~~");
-            string DateTime = parts[0];
-            string Prompt = parts[1];
-            string Response = parts[2];
-            Entry entry = new Entry(DateTime, Prompt, Response);
+            string dateTime = parts[0];
+            string prompt = parts[1];
+            string response = parts[2];
+            Entry entry = new Entry(dateTime,prompt,response);
             entries.Add(entry);
 
 
@@ -60,6 +59,7 @@ public class Journal
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             foreach (Entry entry in entries)
+            ////Properties 
             {
                 outputFile.WriteLine($"{entry._DateTime}~~{entry._Prompt}~~{entry._Response}");
             }
