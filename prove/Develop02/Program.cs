@@ -1,57 +1,67 @@
 using System;
 using System.Collections.Generic;
-
-
-// Comment 1: If I don't use partial I get an error.
-
-This program is not complete. I choose to send this. In order to maybe receive feedback. I will do my best to try to be near the 100 points.  I learned Python on the last  months, this class is going very fast but I will do my best to try to a better job and resubmit.
-  partial class Program 
+using System.IO;
+class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
-
-    //INSTANCES: 
-  
-    //Display Welcome message: 
-    Journal journal = new Journal();
-    journal.WelcomeMessage();
-
-    Console.Write("Please choose an option: ");
-
-
-    string given = Console.ReadLine();
-
-    _choose = float.Parse(given);
-  
-  
-// Here I can't add an int or float to given
-
-    }
-   
-  {
-    if (_choose == 1)
-      {Journal write = new Journal();
-      write.Write();
-      }
-      else if (_choose == 2) 
-      {Journal display = new Journal();
-      display.Display();
-      }
-      else if(_choose == 3)
-      {Journal load = new Journal();
-      load.Load();
-      }
-      else if (_choose == 4)
-      {Journal save = new Journal();
-      save.Save();
-      }
-      else if (_choose == 5)
-      {Console.WriteLine("Thanks for using this program.");
-      }
-  }
-
-
-}
+        Journal journal = new Journal();
+        PromptGenerator prompting = new PromptGenerator();
+        // Vertical and horizontal whitespace (blank lines and indentation) is correct throughout the program.
+        Console.WriteLine("Welcome to the Journal Program:");
     
-      
+       
+        while (true)
+        {  
+            Console.WriteLine("Please select one of the following choices: ");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Display");
+            Console.WriteLine("3. Load");
+            Console.WriteLine("4. Save");
+            Console.WriteLine("5. Exit");
+            Console.Write("What would you like to do? ");
+
+
+            string userInput = Console.ReadLine();
+
+            int _choose = int.Parse(userInput);
+        
+            if (_choose == 1)
+            {
+              
+                journal.AddEntry(prompting);
+           
+            
+
+            }
+            else if (_choose == 2)
+            {
+                journal.Display();
+                Console.WriteLine("");
+            }
+            else if (_choose == 3)
+            {
+                journal.LoadFromFile();
+            }
+            else if (_choose == 4)
+            {
+                journal.SaveToFile(journal.entries);
+              
+            }
+            else if (_choose == 5)
+            {
+                Console.WriteLine("Thanks for using this program.");
+                break;
+            }
+
+             else if (_choose > 5 || _choose < 0)
+            {
+                Console.WriteLine("Please enter a valid number");
+                Console.WriteLine("");
+            }
+        }
+    }
+}
+
+
+

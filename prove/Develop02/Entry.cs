@@ -1,57 +1,56 @@
-
 using System.Collections.Generic;
 public class Entry
+
+//class models the responsibilities of an Entry and does not include items that do not pertain to an Entry.
+// Atributes 
 {
-
-public string _dateTime;
-public string _prompt;
-public string _response; 
-
-        public static void Main(String[] args)
-        {
-            List <string> thePrompts = new List<string>();
-            thePrompts.Add("What was a sad part of my day? ");
-            thePrompts.Add("What was a happy part of my day?  ");
-            thePrompts.Add("How did I see the hand of the Lord in my life today? ");
-            thePrompts.Add(" What good action did I do today? ");
-            thePrompts.Add("What is something that I want to remenber of today? ");
-
-            var rnd = new Random();
-            int index = rnd.Next(thePrompts.Count);
-
-            string info = thePrompts[index];
-        
-        public void Display(){
-            Console.WriteLine($"{_dateTime}, {info}, {_response}");
-
-        }
-
-        public void Add(){
-
-        string _Add = ($"{_dateTime}, {info}, {_response}");
-        }
-
-        
-
-        }
+    private string _dateTime;
+    private string _prompt;
+    private string _response;
 
 
-      
- }
+//Properties
+    public string _DateTime { get{return _dateTime;} }
+    public string _Prompt { get{return _prompt;}}
+    public string _Response  { get{return _response;} }
 
-// Commentary: I want to use my classes and information as public, but it seems to be that in order to work with lists I should use this code:    public static void Main(String[] args). By using this I don't know how I can call my variables in other class
+ // journal entry is written and stored along with the date.
+    public Entry(PromptGenerator prompting)
+    {
+        _prompt = prompting.Prompter();
+        Console.WriteLine(_prompt);
+        Console.Write("> ");
+        _response = Console.ReadLine();
+        _dateTime = DateTime.Now.ToString("MM/dd/yyyy/HH:mm:ss");
+    }
 
+    public Entry(string dateTime, string prompt, string response)
+    {
+        _dateTime = dateTime;
+        _prompt = prompt;
+        _response = response;
+    }
+
+
+
+    public void Display()
+    {
+        Console.WriteLine($"Date: {_dateTime}-Prompt: {_prompt}");
+        Console.WriteLine(_response);
+    }
+
+
+   
 
 
 
 
+    
+
+}
 
 
-
-
-
-
-
+ 
 
 
 

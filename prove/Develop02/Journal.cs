@@ -1,52 +1,68 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 
-public partial class Journal {
+public class Journal
 
-    //METHODS 
+// class models the responsibilities of a Journal and does not include items that do not pertain to a Journal.
+{
+    public List<Entry> entries = new List<Entry>();
+  
 
-  List<Entry> _entries = new List<Entry>();
-
-
-// Comment: I will call the object in entry(The string with all the information but I need that string). I will add that object to the list _entries. 
-   public void WelcomeMessage()
-    {
-    Console.WriteLine("Welcome to your journal. \r\n Please choose an option: \r\n 1. Write. \r\n 2. Display \r\n 3. Load. \r\n 4. Save. \r\n 5. Quit.");
-    }
-    public void Write()
-    {
-    Console.WriteLine("Welcome to your journal. \r\nI Please choose an option: \r\nI 1. Write. \r\nI 2. Display \r\nI 3. Load. \r\nI 4. Save. \r\nI 5. Quit.");
-    }
-
+//All journal entries can be displayed along with the date and prompt associated with that entry.
     public void Display()
     {
-    Console.WriteLine("Welcome to your journal. \r\nI Please choose an option: \r\nI 1. Write. \r\nI 2. Display \r\nI 3. Load. \r\nI 4. Save. \r\nI 5. Quit.");
+        foreach (Entry entry in entries){
+        Console.WriteLine("");
+        entry.Display();
+
+        }
+
     }
 
-    public void Entry()
+    public void AddEntry(PromptGenerator prompting)
+    {   	    
+       Entry entry = new Entry(prompting);
+       entries.Add(entry);
+    }
+//The journal can be loaded from a file.
+    public void LoadFromFile()
+    { 
+        entries.Clear();
+        Console.WriteLine("What is the name of your file? ");
+        Console.Write("> " );
+        string fileName = Console.ReadLine();
+        string[] lines = File.ReadAllLines(fileName);
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("~~");
+            string DateTime = parts[0];
+            string Prompt = parts[1];
+            string Response = parts[2];
+            Entry entry = new Entry(DateTime, Prompt, Response);
+            entries.Add(entry);
+
+
+
+        }
+    }
+
+
+// The journal can be saved to a file.
+    public void SaveToFile(List<Entry> entries)
     {
-    Console.WriteLine("These are the entries");
+
+
+        Console.WriteLine("What is the name of your file? ");
+        string fileName = Console.ReadLine();
+        
+        using (StreamWriter outputFile = new StreamWriter(fileName))
+        {
+            foreach (Entry entry in entries)
+            {
+                outputFile.WriteLine($"{entry._DateTime}~~{entry._Prompt}~~{entry._Response}");
+            }
+        }
     }
-
-    public void Load()
-    {
-    Console.WriteLine("This will load the file");
-    }
-    
-    public void Save()
-    {
-      Console.WriteLine("This will load the file");
-
-    }
-
-    public void Quit()
-    {
-       Console.WriteLine("Thanks for using this program");
-    }
-    public void Prompt()
-
-    {
-      Console.WriteLine("Thanks for using this program");  
-
-    }
-
-
+}       
