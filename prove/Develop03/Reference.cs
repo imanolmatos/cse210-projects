@@ -1,4 +1,5 @@
-public class Reference {
+public class Reference
+{
 
     private string _book;
     private int _chapter;
@@ -6,20 +7,20 @@ public class Reference {
     private int _verseEnd;
 
     public Reference(string book, int chapter, int start, int end)
-    { 
+    {
         _book = book;
         _chapter = chapter;
         _verseStart = start;
-        _verseEnd = end; 
-    
+        _verseEnd = end;
+
     }
 
     public Reference(string book, int chapter, int start)
-    { 
+    {
         _book = book;
         _chapter = chapter;
-   
-    
+
+
     }
 
 
@@ -31,8 +32,8 @@ public class Reference {
 
     }
 
-      public string GetReference()
-      {
+    public string GetReference()
+    {
 
         string CompleteReference = ($"{_book}:{_chapter}-{_verseStart}");
         return CompleteReference;
@@ -40,7 +41,7 @@ public class Reference {
     }
 
 
-    
+
 
 
 
