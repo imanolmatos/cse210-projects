@@ -5,7 +5,8 @@ public class Reference {
     private int _verseStart;
     private int _verseEnd;
 
-    public Reference(string book, int chapter, int start, int end){ 
+    public Reference(string book, int chapter, int start, int end)
+    { 
         _book = book;
         _chapter = chapter;
         _verseStart = start;
@@ -13,16 +14,27 @@ public class Reference {
     
     }
 
-    public string GetCompleteReference(){
+    public Reference(string book, int chapter, int start)
+    { 
+        _book = book;
+        _chapter = chapter;
+   
+    
+    }
 
-        string CompleteReference = ($"{_book} {_chapter} {_verseStart} {_verseEnd}");
+
+    public string GetCompleteReference()
+    {
+
+        string CompleteReference = ($"{_book} {_chapter}:{_verseStart}-{_verseEnd}");
         return CompleteReference;
 
     }
 
-      public string GetReference(){
+      public string GetReference()
+      {
 
-        string CompleteReference = ($"{_book} {_chapter} {_verseStart}");
+        string CompleteReference = ($"{_book}:{_chapter}-{_verseStart}");
         return CompleteReference;
 
     }
