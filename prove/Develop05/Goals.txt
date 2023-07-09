@@ -1,0 +1,4 @@
+100
+Simple,Be helpful,Be helpfult at home.,20,False
+Eternal,Read Scriptures,Read 15 minutes everyday.,50
+Checklist,Read ,Read a book every week ,100,False,0,0,0
