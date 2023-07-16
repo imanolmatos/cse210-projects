@@ -1,11 +1,9 @@
 using System;
-
 class Program
 {
     static void Main(string[] args)
     {
         GoalManager manager = new GoalManager();
-        Console.WriteLine("Hello Develop05 World!");
         while (true)
         {
             Console.WriteLine($"You have {manager.TotalAmountPoints()} points");
@@ -16,7 +14,8 @@ class Program
             Console.WriteLine("  3. Save Goals");
             Console.WriteLine("  4. Load Goals");
             Console.WriteLine("  5. Record Event");
-            Console.WriteLine("  6. Quit");
+            Console.WriteLine("  6. Reduce Points(Bad habit)");
+            Console.WriteLine("  7. Quit");
             Console.Write("Select a choice from the menu: ");
             string userInput = Console.ReadLine();
             int _choose = int.Parse(userInput);
@@ -41,6 +40,11 @@ class Program
             manager.RecordEvent();
             }
             else if (_choose == 6)
+            {Console.WriteLine("How many points are you going to reduce? ");
+             int _reducePoints = int.Parse(Console.ReadLine());
+             manager.ReducePoints(_reducePoints);
+            }
+            else if (_choose == 7)
             {
                 Console.WriteLine("Thanks for using this program!");
                 break;

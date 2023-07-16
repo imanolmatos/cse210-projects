@@ -1,4 +1,4 @@
-100
-Simple,Be helpful,Be helpfult at home.,20,False
-Eternal,Read Scriptures,Read 15 minutes everyday.,50
-Checklist,Read ,Read a book every week ,100,False,0,0,0
+660
+Simple~Help others~Help at least one person in the day~50~True
+Eternal~Read Scriptures~30 minutes everyday~20
+Checklist~Visit my father~Visit my father 5 times this month~10~True~500~5~5

@@ -9,11 +9,9 @@ public class Simple : Goals
         Console.WriteLine($"Congratulations, you have earned {_points}! ");
         return _points;
     }
-    // return points
-
 
     public override string SaveString()
     {
-        return $"Simple,{_name},{_description},{_points},{_isCompleted}";
+        return $"Simple~{_name}~{_description}~{_points}~{_isCompleted}";
     }
 }

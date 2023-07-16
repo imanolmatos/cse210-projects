@@ -4,7 +4,7 @@ public class Product
     private string _productName = "Unknown Product Name";
     private double _price = 0;
     private int _quantity = 0;
-
+    
     public Product(int id, string product, double price, int quantity)
     {
         _productId = id;
@@ -15,6 +15,10 @@ public class Product
     public int GetId()
     {
         return _productId;
+    }
+    public string GetProductName()
+    {
+        return _productName;
     }
     public double ReturnPrice()
     {

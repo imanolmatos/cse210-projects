@@ -1,14 +1,22 @@
 public class Customer
 {
     private string _customerName;
-    private Address address = new Address(); 
+    private Address _add;
 
-    public Customer(string name)
+    public Customer(string name, Address address)
     {
         _customerName = name;
+        _add = address;
     }
-
-    public Customer() { }
+    public void SetCustomer(string name)
+    { 
+        _customerName = name;
+        
+    }
+    public void SetAddress(Address address) 
+    {
+      _add = address;
+    }
 
     public string GetName()
     {
@@ -17,11 +25,11 @@ public class Customer
 
     public string GetAddress()
     {
-        return address.ReturnAddress();
+        return _add.ReturnAddress();
     }
 
     public bool IsTheCustomerUsa()
     {
-        return address.InUsa();
+        return _add.InUsa();
     }
 }

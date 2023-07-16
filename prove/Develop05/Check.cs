@@ -18,12 +18,8 @@ public class Checklist : Goals
             
         _bonus = bonusPoints;
         _target = target;
-        _timesCompleted = timesCompleted;
-
-            
+        _timesCompleted = timesCompleted;           
         }
-
-   
 
     public override int RecordEvent()
     {
@@ -43,10 +39,9 @@ public class Checklist : Goals
         }
     }
 
-
     public override string SaveString()
     {
-        return $"Checklist,{_name},{_description},{_points},{_isCompleted},{_bonus},{_target},{_timesCompleted}";
+        return $"Checklist~{_name}~{_description}~{_points}~{_isCompleted}~{_bonus},{_target}~{_timesCompleted}";
     }
 
 }

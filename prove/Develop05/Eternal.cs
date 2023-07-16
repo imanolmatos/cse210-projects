@@ -5,13 +5,13 @@ public class Eternal : Goals
 
     public override int RecordEvent()
     {
-        _isCompleted = true;
+        _isCompleted = false; //this will never be completed
         Console.WriteLine("");
         return _points;
     }
 
     public override string SaveString()
     {
-        return $"Eternal,{_name},{_description},{_points}";
+        return $"Eternal~{_name}~{_description}~{_points}";
     }
 }

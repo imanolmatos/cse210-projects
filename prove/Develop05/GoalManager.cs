@@ -22,6 +22,11 @@ public class GoalManager
         return _totalPoints;
     }
 
+    public void ReducePoints(int reduce)
+    {
+        _totalPoints = _totalPoints - reduce;
+    }
+
     public void AddGoal()
     {
         Console.WriteLine("The types of Goals are:");
@@ -75,19 +80,20 @@ public class GoalManager
         _goalsList.Clear();
         Console.WriteLine("What is the name of your file? ");
         string fileName = Console.ReadLine();
+        string line1 = File.ReadLines(fileName).First(); 
+        int first = int.Parse(line1);
+        _totalPoints = first;
         string[] lines = File.ReadAllLines(fileName);
+        
 
         foreach (string line in lines)
         {   
-            string[] _parts = line.Split(",");  
-            int _first =  int.Parse(_parts[0]);
-            _totalPoints = _first;
-
+            string[] _parts = line.Split("~");  
                
             if (_parts[0] == "Simple")
-            {    string _name = _parts[1];
-                 string _description = _parts[2];
-                 int _points = int.Parse(_parts[3]);
+            {   string _name = _parts[1];
+                string _description = _parts[2];
+                int _points = int.Parse(_parts[3]);
                 bool _complete = bool.Parse(_parts[4]);
                 Simple goal = new Simple(_name, _description, _points, _complete);
                 _goalsList.Add(goal);
@@ -121,7 +127,6 @@ public class GoalManager
             }
         }
     }
-
     public void RecordEvent()
     {
         int counter = 1;
@@ -144,9 +149,8 @@ public class GoalManager
     public void PrincipalDisplay()
     {
           foreach (Goals goal in _goalsList)
-        {
-            Console.Write(goal.Display());
-       
+        {          
+           Console.Write(goal.Display());  
         }
     }
 }
