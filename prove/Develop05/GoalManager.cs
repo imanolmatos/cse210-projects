@@ -2,7 +2,6 @@ public class GoalManager
 {
     private List<Goals> _goalsList = new List<Goals>();
     private int _totalPoints = 0;
-
     public void SaveToFile()
     {
         Console.WriteLine("What is the name of your file? ");
@@ -26,7 +25,6 @@ public class GoalManager
     {
         _totalPoints = _totalPoints - reduce;
     }
-
     public void AddGoal()
     {
         Console.WriteLine("The types of Goals are:");
@@ -79,14 +77,13 @@ public class GoalManager
     {
         _goalsList.Clear();
         Console.WriteLine("What is the name of your file? ");
-        string fileName = Console.ReadLine();
-        string line1 = File.ReadLines(fileName).First(); 
-        int first = int.Parse(line1);
-        _totalPoints = first;
-        string[] lines = File.ReadAllLines(fileName);
+        string _fileName = Console.ReadLine();
+        string _line1 = File.ReadLines(_fileName).First(); 
+        int _first = int.Parse(_line1);
+        _totalPoints = _first;
+        string[] _lines = File.ReadAllLines(_fileName);
         
-
-        foreach (string line in lines)
+        foreach (string line in _lines)
         {   
             string[] _parts = line.Split("~");  
                

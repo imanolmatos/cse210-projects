@@ -43,5 +43,4 @@ public class Checklist : Goals
     {
         return $"Checklist~{_name}~{_description}~{_points}~{_isCompleted}~{_bonus},{_target}~{_timesCompleted}";
     }
-
 }
